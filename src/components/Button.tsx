@@ -1,5 +1,7 @@
 interface ButtonProps {
     children: React.ReactNode;
+    variant?: string;
+    color?: string;
     className?: string;
     onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
 }

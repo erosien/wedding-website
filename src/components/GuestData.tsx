@@ -10,15 +10,6 @@ const columns: GridColDef[] = [
     { field: 'id', headerName: 'ID', width: 90},
     { field: 'title', headerName: 'Title', flex: 1},
     { field: 'artist', headerName: 'Artist', flex: 1},
-    // {
-    //     field: "action",
-    //     headerName: "Play Song",
-    //     sortable: false,
-    //     renderCell: ({ row }: Partial<GridRowParams>) =>
-    //       <Button onClick={() => yourActionFunction(row)}>
-    //         Action
-    //       </Button>,
-    //   },
 ]
 
 function DataTable() {
@@ -38,7 +29,8 @@ function DataTable() {
         server_calls.delete(selectionModel[0]);
         getData();
         console.log(`Selection model: ${selectionModel}`)
-        setTimeout( () => { window.location.reload() }, 10000)
+        console.log(selectionModel)
+        setTimeout( () => { window.location.reload() }, 500)
     }
 
     return (
@@ -68,11 +60,14 @@ function DataTable() {
                 style={{ height: 800, width: '100%' }}
                 >
                     <h2 className='p-3 bg-stone-400 text-stone-100 my-2 rounded'>What Our Guests Want to Boogie To</h2>
-                    <DataGrid rows={songData} columns={columns} rowsPerPageOptions={[5]}
-                    checkboxSelection={true} 
-                    onSelectionModelChange={ (item:any) => {
-                        setSelectionModel(item)
-                    }}
+                    <DataGrid rows={songData} columns={columns} 
+                        initialState={{columns: {
+                            columnVisibilityModel: {id: false}
+                        }}} 
+                        checkboxSelection={true} 
+                        onRowSelectionModelChange={ (item:any) => {
+                            setSelectionModel(item)
+                         }}
                     />
                 </div>
             </div>

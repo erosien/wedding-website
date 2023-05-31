@@ -1,72 +1,88 @@
-import { useState } from 'react'
-import { Link } from 'react-router-dom'
-import AuthState from './AuthState'
-import { auth } from '../config/firebase.config'
-import { signOut } from 'firebase/auth'
-import { useNavigate } from 'react-router-dom'
+import { Link } from "react-router-dom";
+import { auth } from "../config/firebase.config";
 
 function Navbar() {
+  const routes = [
+    {
+      routeTitle: "Home",
+      routeLocation: "/",
+      isLoggedIn: true,
+    },
+    {
+        routeTitle: "Details",
+        routeLocation: "/details",
+        isLoggedIn: true,
+    },
+    {
+        routeTitle: "Accomodations",
+        routeLocation: "/accomodations",
+        isLoggedIn: true,
+    },
+    {
+        routeTitle: "Itinerary",
+        routeLocation: "/itinerary",
+        isLoggedIn: true,
+    },
+    {
+        routeTitle: "Song Requests",
+        routeLocation: "/songrecs",
+        isLoggedIn: true,
+    },
+    {
+      routeTitle: "Sign Up",
+      routeLocation: "/signup",
+      isLoggedIn: false,
+    },
+    {
+        routeTitle: "Sign In",
+        routeLocation: "/signin",
+        isLoggedIn: false,
+    },
+    {
+        routeTitle: "Sign Out",
+        routeLocation: "/signout",
+        isLoggedIn: true,
+    },
+  ];
 
-    const navigate = useNavigate()
+  const viewableRouteWhenLoggedIn = () => {
+    return routes.map((route) => {
+      if (route.isLoggedIn && auth.currentUser) {
+        return (
+          <li key={route.routeTitle}>
+            <Link
+              to={route.routeLocation}
+              className="flex-row hover:text-slate-500"
+            >
+              {route.routeTitle}
+            </Link>
+          </li>
+        );
+      } else if (!auth.currentUser && !route.isLoggedIn) {
+        return (
+          <li key={route.routeTitle}>
+            <Link
+              to={route.routeLocation}
+              className="flex-row hover:text-slate-500"
+            >
+              {route.routeTitle}
+            </Link>
+          </li>
+        );
+      }
+    });
+  };
 
-    const signOutOnClick = () => {
-        signOut(auth)
-        navigate('/signin')
-    }
-
-    return (
-        <div>
-            <nav className='bg-stone-200 fixed top-0 w-full z-100 py-5 px-10'>
-                <ul className='flex items-center justify-around'>
-                    <li className='m-3'>
-                        <Link to='/' className='flex-row hover:text-slate-500'>
-                            Home
-                        </Link>
-                    </li>
-                    <li className='m-3'>
-                        <Link to='/details' className='flex hover:text-slate-500'>
-                            Details
-                        </Link>
-                    </li>
-                    <li className='m-3'>
-                        <Link to='/accomodations' className='flex place-items-center hover:text-slate-500'>
-                            Accomodations
-                        </Link>
-                    </li>
-                    <li className='m-3'>
-                        <Link to='/itinerary' className='flex place-items-center hover:text-slate-500'>
-                            Itinerary
-                        </Link>
-                    </li>
-                    <li className='m-3'>
-                        <Link to='/SongRecs' className='flex place-items-center hover:text-slate-500'>
-                            Song Requests
-                        </Link>
-                    </li>
-                    <li className='m-3'>
-                        <Link to='/SignUp' className='flex place-items-center hover:text-slate-500'>
-                            Sign Up
-                        </Link>
-                    </li>
-                    {
-                    !auth.currentUser ?
-                    <li className='m-3'>
-                        <Link to='/SignIn' className='flex place-items-center hover:text-slate-500'>
-                            Sign In
-                        </Link>
-                    </li>
-                    :
-                    <li className='m-3'>
-                        <Link to='/' onClick={signOutOnClick} className='flex place-items-center hover:text-slate-500'>
-                            Sign Out
-                        </Link>
-                    </li>
-                    }
-                </ul>
-            </nav>
-        <div className="m-20"></div>
-        </div>
-    )
+  return (
+    <div>
+      <nav className="bg-stone-200 fixed top-0 w-full z-100 py-5 px-10">
+        <ul className="flex items-center justify-around p-5">
+          {viewableRouteWhenLoggedIn()}
+        </ul>
+      </nav>
+      <div className="mb-24"></div>
+    </div>
+  );
 }
 
-export default Navbar
+export default Navbar;

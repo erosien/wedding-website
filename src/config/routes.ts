@@ -5,6 +5,7 @@ import Home from "../pages/Home";
 import SongRecs from "../pages/SongRecs";
 import SignUp from "../pages/SignUp"
 import SignIn from "../pages/SignIn";
+import SignOut from "../pages/SignOut"
 
 interface RouteType {
     path: string,
@@ -47,7 +48,12 @@ const routes: RouteType[] = [
         path: "/signin",
         component: SignIn,
         name: "Sign In",
-    }
+    },
+    {
+        path: "/signout",
+        component: SignOut,
+        name: "Sign Out",
+    },
 ];
 
 export default routes;
