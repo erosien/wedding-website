@@ -4,6 +4,7 @@ type Props = {
     id?: string[];
     open: boolean;
     onClose: () => void;
+    hasNewData: (hasData: boolean) => void;
 }
 
 const Modal = ( props: Props ) => {
@@ -28,7 +29,11 @@ const Modal = ( props: Props ) => {
                         </p>
                     </div>
                     <div className="flex flex-col items-center text-center mt-3 p-2">
-                        <GuestForm id={ props.id }/>
+                        <GuestForm 
+                            id={ props.id }
+                            hasNewData={ (hasData: boolean) => props.hasNewData(hasData)}
+                            onClose={props.onClose}
+                        />
                     </div>
                 </div>
             </div>

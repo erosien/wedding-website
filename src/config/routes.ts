@@ -6,6 +6,8 @@ import SongRecs from "../pages/SongRecs";
 import SignUp from "../pages/SignUp"
 import SignIn from "../pages/SignIn";
 import SignOut from "../pages/SignOut"
+import Registry from "../pages/Registry";
+import RSVP from "../pages/RSVP";
 
 interface RouteType {
     path: string,
@@ -38,6 +40,16 @@ const routes: RouteType[] = [
         path: "/songrecs",
         component: SongRecs,
         name: "SongRecs",
+    },
+    {
+        path: "/registry",
+        component: Registry,
+        name: "Registry",
+    },
+    {
+        path: "/rsvp",
+        component: RSVP,
+        name: "RSVP",
     },
     {
         path: "/signup",

@@ -37,6 +37,7 @@ export default function SignIn() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const navigate = useNavigate()
+  const [errorMessage, setErrorMessage] = useState('')
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -55,6 +56,7 @@ export default function SignIn() {
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
+        setErrorMessage('Incorrect information. Please try again.')
         console.log({
           errorCode: errorCode,
           errorMessage: errorMessage
@@ -119,10 +121,6 @@ export default function SignIn() {
                 autoComplete="current-password"
                 onChange={(event) => {setPassword(event.target.value)}}
               />
-              <FormControlLabel
-                control={<Checkbox value="remember" color="primary" />}
-                label="Remember me"
-              />
               <Button
                 type="submit"
                 fullWidth
@@ -131,6 +129,9 @@ export default function SignIn() {
               >
                 Sign In
               </Button>
+              {errorMessage && (
+                <p className="error"> {errorMessage} </p>
+              )}
               <Copyright sx={{ mt: 5 }} />
             </Box>
           </Box>

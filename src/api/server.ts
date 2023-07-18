@@ -70,6 +70,6 @@ export const server_calls = {
             throw new Error('Failed to delete data on server')
         }
 
-        return;
+        return { songID: id, message: "Is Removed"};
     },
 }

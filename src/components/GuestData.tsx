@@ -14,6 +14,7 @@ const columns: GridColDef[] = [
 
 function DataTable() {
     const [ open, setOpen ] = useState(false);
+    const [ err, setError ] = useState(null);
     const { songData, getData } = useGetData();
     const [ selectionModel, setSelectionModel ] = useState<string[]>([])
 
@@ -25,24 +26,41 @@ function DataTable() {
         setOpen(false)
     }
 
-    const deleteData = () => {
-        server_calls.delete(selectionModel[0]);
-        getData();
-        console.log(`Selection model: ${selectionModel}`)
-        console.log(selectionModel)
-        setTimeout( () => { window.location.reload() }, 500)
-    }
+    const deleteData = async () => {
+        try {
+            const deleteResponse = await server_calls.delete(selectionModel[0]);
+            if (deleteResponse.songID) {
+                await getData();
+            }
+        } catch (err: any) {
+            setError(err);
+        }
+        console.log(`Selection model: ${selectionModel}`);
+    };
+
+    const getNewData = async () => {
+        try {
+            console.log("Are we getting here");
+            await getData();
+            return;
+        } catch (error) {
+            setError(err);
+        }
+    };
+    console.log(songData);
 
     return (
         <>
+            <div>{err}</div>
             <Modal
                 id={selectionModel}
                 open={open}
                 onClose={handleClose}
+                hasNewData={ (hasData: boolean) => (hasData ? getNewData() : null)}
             />
             <div style={{ backgroundImage: `url(${ Background })`}}
             className='flex flex-row justify-center mx-auto bg-cover bg-fixed font-serif'> 
-                <div className="bg-stone-200 container m-5 place-items-center p-5 w-100 border-double border-4 border-stone-300 rounded-lg">
+                <div className="bg-stone-200 mt-5 mb-5 container m-5 place-items-center p-5 w-100 border-double border-4 border-stone-300 rounded-lg">
                     <h1 className="p-8 justify-center text-6xl text-center font-bold">Song Requests</h1>
                 <div className="flex flex-row">
                     <div>

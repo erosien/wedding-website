@@ -1,36 +1,67 @@
 import Background from "../assets/images/1.jpg"
-import ColorScheme from "../assets/images/colorscheme.png"
-import Venue from "../assets/images/venue.jpg"
-import Venue1 from "../assets/images/venue1.jpg"
-import Venue2 from "../assets/images/venue2.jpg"
-import Venue3 from "../assets/images/venue3.jpg"
+import headerimg from "../assets/images/KNP_5000.jpg"
+import img1 from "../assets/images/KNP_5137.jpg"
+import img2 from "../assets/images/KNP_4635.jpg"
+import img3 from "../assets/images/KNP_5482.jpg"
+import img4 from "../assets/images/KNP_5226.jpg"
+import img5 from "../assets/images/KNP_4744.jpg"
+import img6 from "../assets/images/KNP_4921.jpg"
+import colorscheme from "../assets/images/colorscheme.png"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faChurch, faHeart, faChampagneGlasses } from '@fortawesome/free-solid-svg-icons'
 
 const Details = () => {
   return (
   <div style={{ backgroundImage: `url(${ Background })`}}
   className='flex flex-row justify-center mx-auto bg-cover bg-fixed font-serif'>
-    <div className="bg-stone-200 m-5 text-center w-2/3 border-double border-4 border-stone-300 rounded-lg">
+    <div className="bg-stone-200 container mt-5 mb-5 p-5 text-center w-2/3 border-double border-4 border-stone-300 rounded-lg">
       <h1 className="p-8 justify-center text-6xl text-center font-bold">Details</h1>
-      <div className="grid grid-cols-2 gap-2 border-2 p-5 m-2">
+      <div className="grid grid-cols-3 gap-2 border-2 p-5 m-2">
         <div className="tile mx-auto text-3xl space-y-5">
-          <p>Wedding Date: 6/21/24</p>
-          <p>Location: Agriturismo Sant'Alfonso</p>
-          <p>Address: Via S. Alfonso, 6 | Furore, Italy</p>
-          <p>Ceremony: 5:00 PM</p>
-          <p>Weather: 67 - 78 degrees F</p>
-          <p>Dress code: Formal</p>
-          <p>Theme: 70's Garden Party</p>
-          <p>Color Scheme:</p>
-          <img src={ColorScheme} className="mx-auto h-1/2 w-full object-cover"></img>
+          <p className="font-bold">Our Wedding Day</p>
+          <p> June 21st, 2024</p>
+          <FontAwesomeIcon icon={faHeart} />
         </div>
-        <div className="tile justify-self-center self-center text-3xl space-y-6">
-          <img src={Venue} className="mx-auto h-full w-full object-cover"></img>
+        <div className="tile mx-auto text-3xl space-y-5">
+          <p className="font-bold">Ceremony</p>
+          <p>5:00 PM</p>
+          <FontAwesomeIcon icon={faChurch} />
+        </div>
+        <div className="tile mx-auto text-3xl space-y-5">
+          <p className="font-bold">Reception</p>
+          <p>6:30 PM</p>
+          <FontAwesomeIcon icon={faChampagneGlasses} />
         </div>
       </div>
       <div className="mx-auto space-y-5 p-5">
-        <img src={Venue1} className="mx-auto h-96 w-full object-cover"></img>
-        <img src={Venue2} className="mx-auto h-96 w-full object-cover"></img>
-        <img src={Venue3} className="mx-auto h-96 w-full object-cover"></img>
+        <img src={headerimg} className="object-cover object-top w-full h-56 shadow-lg rounded-lg"></img>
+      </div>
+      <div className="mx-auto space-y-5 p-5 w-2/3">
+        <p className="text-2xl mx-auto p-2">Both the ceremony and reception will be held at <b>Agriturismo Sant'Alfonso</b> located
+         at Via S. Alfonso, 6 - 84010 Furore, Italy. Shuttles can be arranged from your accomodation upon request.</p>
+        <p className="text-2xl mx-auto p-2">The theme for the wedding is 70's Garden Party - please dress formally.</p>
+        <p className="text-2xl mx-auto p-2">Color Scheme:</p>
+        <img src={colorscheme} className="object-cover object-top w-full h-20 shadow-lg rounded-lg"></img>
+      </div>
+      <div className="container mx-auto space-y-2 lg:space-y-0 lg:gap-5 lg:grid lg:grid-cols-3">
+        <div className="w-full rounded">
+          <img src={img1}></img>
+        </div>
+        <div className="w-full rounded">
+          <img src={img2}></img>
+        </div>
+        <div className="w-full rounded">
+          <img src={img3}></img>
+        </div>
+        <div className="w-full rounded">
+          <img src={img4}></img>
+        </div>
+        <div className="w-full rounded">
+          <img src={img5}></img>
+        </div>
+        <div className="w-full rounded">
+          <img src={img6}></img>
+        </div>
       </div>
     </div>
   </div>

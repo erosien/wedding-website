@@ -11,7 +11,7 @@ const Accomodations = () => {
   return (
   <div style={{ backgroundImage: `url(${ Background })`}}
     className='flex flex-row justify-center mx-auto bg-cover bg-fixed font-serif'>  
-    <div className="bg-stone-200 container m-5 place-items-center p-5 w-100 border-double border-4 border-stone-300 rounded-lg">
+    <div className="bg-stone-200 container mt-5 mb-5 place-items-center p-5 w-2/3 border-double border-4 border-stone-300 rounded-lg">
       <h1 className="p-8 justify-center text-6xl text-center font-bold">Accomodations</h1>
       <h2 className="text-3xl italic text-center">Positano Stays (6/17/24 - 6/20/24)</h2>
       <div className="grid grid-cols-2 gap-6 border-2 p-5 m-2">
