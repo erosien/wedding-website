@@ -59,23 +59,21 @@ function DataTable() {
                 hasNewData={ (hasData: boolean) => (hasData ? getNewData() : null)}
             />
             <div style={{ backgroundImage: `url(${ Background })`}}
-            className='flex flex-row justify-center mx-auto bg-cover bg-fixed font-serif'> 
-                <div className="bg-stone-200 mt-5 mb-5 container m-5 place-items-center p-5 w-100 border-double border-4 border-stone-300 rounded-lg">
-                    <h1 className="p-8 justify-center text-6xl text-center font-bold">Song Requests</h1>
-                <div className="flex flex-row">
-                    <div>
+            className='flex flex-row justify-center mx-auto bg-cover bg-fixed font-sans'> 
+                <div className="bg-stone-200 mt-5 mb-5 container m-5 place-items-center p-5 w-2/3 border-double border-4 border-stone-300 rounded-lg">
+                    <h1 className="p-3 justify-center text-4xl text-center font-bold">Song Requests</h1>
+                <div className="flex flex-col lg:flex-row">
                     <button 
-                        className="p-3 bg-stone-400 m-3 rounded text-stone-100 hover:bg-stone-500 hover:text-white"
+                        className="p-3 bg-stone-400 rounded text-sm m-3 text-stone-100 hover:bg-stone-500 hover:text-white"
                         onClick={() => handleOpen()}
                     >
                         Add New Song
                     </button>
-                <Button onClick={handleOpen} className="p-3 bg-stone-400 m-3 rounded text-stone-100 hover:bg-stone-500 hover:text-white" >Update</Button>
-                <Button onClick={deleteData} className="p-3 bg-stone-400 m-3 rounded text-stone-100 hover:bg-stone-500 hover:text-white" >Delete</Button>
-                </div>
+                    <Button onClick={handleOpen} className="p-3 bg-stone-400 text-sm m-3 rounded text-stone-100 hover:bg-stone-500 hover:text-white" >Update</Button>
+                    <Button onClick={deleteData} className="p-3 bg-stone-400 text-sm m-3 rounded text-stone-100 hover:bg-stone-500 hover:text-white" >Delete</Button>
             </div>
             <div className={ open ? "hidden" : "container mx-auto my-5 flex flex-col" }
-                style={{ height: 800, width: '100%' }}
+                style={{ height: 500, width: '100%' }}
                 >
                     <h2 className='p-3 bg-stone-400 text-stone-100 my-2 rounded'>What Our Guests Want to Boogie To</h2>
                     <DataGrid rows={songData} columns={columns} 

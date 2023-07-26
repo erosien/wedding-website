@@ -7,7 +7,7 @@ function Home() {
       className='flex flex-row justify-center h-full bg-cover bg-right bg-fixed font-serif'
       >
         <div className='flex place-items-center h-screen'>
-            <h1 className='text-white text-opacity-75 rounded text-9xl'>E & J</h1>
+            <h1 className='text-white text-opacity-75 rounded text-8xl'>E & J</h1>
         </div>
     </div>
   )

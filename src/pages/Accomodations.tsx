@@ -10,12 +10,12 @@ import { Button } from "@mui/material"
 const Accomodations = () => {
   return (
   <div style={{ backgroundImage: `url(${ Background })`}}
-    className='flex flex-row justify-center mx-auto bg-cover bg-fixed font-serif'>  
+    className='flex flex-row justify-center mx-auto bg-cover bg-fixed font-sans'>  
     <div className="bg-stone-200 container mt-5 mb-5 place-items-center p-5 w-2/3 border-double border-4 border-stone-300 rounded-lg">
-      <h1 className="p-8 justify-center text-6xl text-center font-bold">Accomodations</h1>
-      <h2 className="text-3xl italic text-center">Positano Stays (6/17/24 - 6/20/24)</h2>
-      <div className="grid grid-cols-2 gap-6 border-2 p-5 m-2">
-        <div className="tile justify-self-center self-center text-3xl space-y-6">
+      <h1 className="mx-auto p-1 lg:p-3 justify-center text-3xl lg:text-4xl text-center font-bold">Accomodations</h1>
+      <h2 className="text-2xl italic text-center">Positano Stays (6/17/24 - 6/20/24)</h2>
+      <div className="grid grid-cols-1 gap-6 border-2 p-2 m-2 lg:space-y-0 lg:gap-5 lg:grid lg:grid-cols-2">
+        <div className="tile justify-self-center self-center text-1xl space-y-3">
           <h1 className="tile-marker font-bold text-center">Casa Oceano</h1>
           <p>Two-Bedroom Apartment</p>
           <p>$1,800 for 2 | $1,906 for 3 | $2,118 for 4</p>
@@ -33,7 +33,7 @@ const Accomodations = () => {
         <div className="tile">
           <img src={stay2} className="mx-auto h-96 w-full object-cover  border-solid border-5 border-stone-300 rounded" alt="Hotel room with a bed and a couch" />
         </div>
-        <div className="tile justify-self-center self-center text-3xl space-y-6">
+        <div className="tile justify-self-center self-center text-1xl space-y-3">
           <h1 className="tile-marker font-bold text-center">Casa Laurito</h1>
           <p>One-Bedroom Apartment</p>
           <p>$978 for 2 | $1,141 for 3</p>
@@ -45,7 +45,7 @@ const Accomodations = () => {
             </a>
           </p>
         </div>
-        <div className="tile justify-self-center self-center text-3xl space-y-6">
+        <div className="tile justify-self-center self-center text-1xl space-y-3  lg:space-y-0 lg:gap-5 lg:grid lg:grid-cols-3">
           <h1 className="tile-marker font-bold text-center">Casa Roberta</h1>
           <p>One-Bedroom Apartment</p>
           <p>$619 for 2</p>
@@ -62,9 +62,9 @@ const Accomodations = () => {
         </div>
       </div>
       <hr className="w-3/4 h-1 mx-auto my-4 bg-gray-100 border-0 rounded md:my-10 dark:bg-gray-700"></hr>
-      <h2 className="text-3xl italic text-center">Furore Stays (6/20/24 - 6/23/24)</h2>
-      <div className="grid grid-cols-2 gap-6 border-2 p-5 m-2">
-        <div className="tile justify-self-center self-center text-3xl space-y-6">
+      <h2 className="text-2xl italic text-center">Furore Stays (6/20/24 - 6/23/24)</h2>
+      <div className="grid grid-cols-1 gap-6 border-2 p-2 m-2  lg:space-y-0 lg:gap-5 lg:grid lg:grid-cols-2">
+        <div className="tile justify-self-center self-center text-1xl space-y-3">
           <h1 className="tile-marker font-bold text-center">Villa Paradise Resort</h1>
           <p>Deluxe Triple Room</p>
           <p>$391 for 1 | $456 for 2 | $521 for 3</p>
@@ -82,7 +82,7 @@ const Accomodations = () => {
         <div className="tile">
           <img src={stay5} className="mx-auto h-96 w-full object-cover border-solid border-5 border-stone-300 rounded" alt="Hotel room with a bed and a couch" />
         </div>
-        <div className="tile justify-self-center self-center text-3xl space-y-6">
+        <div className="tile justify-self-center self-center text-1xl space-y-3">
           <h1 className="tile-marker font-bold text-center">Ambra Holiday House</h1>
           <p>Two-Bedroom Apartment</p>
           <p>$471 for 2 | $499 for 3 | $609 for 4</p>
@@ -94,7 +94,7 @@ const Accomodations = () => {
             </a>
           </p>
         </div>
-        <div className="tile justify-self-center self-center text-3xl space-y-6">
+        <div className="tile justify-self-center self-center text-1xl space-y-3">
           <h1 className="tile-marker font-bold text-center">Villa le Arcate</h1>
           <p>Three-Bedroom House</p>
           <p>$978 for 7</p>

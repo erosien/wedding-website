@@ -13,37 +13,37 @@ import { faChurch, faHeart, faChampagneGlasses } from '@fortawesome/free-solid-s
 const Details = () => {
   return (
   <div style={{ backgroundImage: `url(${ Background })`}}
-  className='flex flex-row justify-center mx-auto bg-cover bg-fixed font-serif'>
+  className='flex flex-row justify-center mx-auto bg-cover bg-fixed font-sans'>
     <div className="bg-stone-200 container mt-5 mb-5 p-5 text-center w-2/3 border-double border-4 border-stone-300 rounded-lg">
-      <h1 className="p-8 justify-center text-6xl text-center font-bold">Details</h1>
-      <div className="grid grid-cols-3 gap-2 border-2 p-5 m-2">
-        <div className="tile mx-auto text-3xl space-y-5">
+      <h1 className="p-3 justify-center text-4xl text-center font-bold">Details</h1>
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-2 border-2 p-1 m-1">
+        <div className="tile mx-auto text-1xl space-y-4">
           <p className="font-bold">Our Wedding Day</p>
           <p> June 21st, 2024</p>
           <FontAwesomeIcon icon={faHeart} />
         </div>
-        <div className="tile mx-auto text-3xl space-y-5">
+        <div className="tile mx-auto text-1xl space-y-4">
           <p className="font-bold">Ceremony</p>
           <p>5:00 PM</p>
           <FontAwesomeIcon icon={faChurch} />
         </div>
-        <div className="tile mx-auto text-3xl space-y-5">
+        <div className="tile mx-auto text-1xl space-y-4">
           <p className="font-bold">Reception</p>
           <p>6:30 PM</p>
           <FontAwesomeIcon icon={faChampagneGlasses} />
         </div>
       </div>
-      <div className="mx-auto space-y-5 p-5">
-        <img src={headerimg} className="object-cover object-top w-full h-56 shadow-lg rounded-lg"></img>
+      <div className="mx-auto space-y-5 p-1">
+        <img src={headerimg} className="object-cover object-top w-full h-32 shadow-lg rounded-lg"></img>
       </div>
-      <div className="mx-auto space-y-5 p-5 w-2/3">
-        <p className="text-2xl mx-auto p-2">Both the ceremony and reception will be held at <b>Agriturismo Sant'Alfonso</b> located
+      <div className="mx-auto space-y-1 p-1 w-2/3">
+        <p className="text-1xl mx-auto m-1">Both the ceremony and reception will be held at <b>Agriturismo Sant'Alfonso</b> located
          at Via S. Alfonso, 6 - 84010 Furore, Italy. Shuttles can be arranged from your accomodation upon request.</p>
-        <p className="text-2xl mx-auto p-2">The theme for the wedding is 70's Garden Party - please dress formally.</p>
-        <p className="text-2xl mx-auto p-2">Color Scheme:</p>
+        <p className="text-1xl mx-auto p-2">The theme for the wedding is 70's Garden Party - please dress formally.</p>
+        <p className="text-1xl mx-auto p-2">Color Scheme:</p>
         <img src={colorscheme} className="object-cover object-top w-full h-20 shadow-lg rounded-lg"></img>
       </div>
-      <div className="container mx-auto space-y-2 lg:space-y-0 lg:gap-5 lg:grid lg:grid-cols-3">
+      <div className="container p-2 mx-auto space-y-2 lg:space-y-0 lg:gap-5 lg:grid lg:grid-cols-3">
         <div className="w-full rounded">
           <img src={img1}></img>
         </div>
