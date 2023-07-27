@@ -45,7 +45,7 @@ const Accomodations = () => {
             </a>
           </p>
         </div>
-        <div className="tile justify-self-center self-center text-1xl space-y-3  lg:space-y-0 lg:gap-5 lg:grid lg:grid-cols-3">
+        <div className="tile justify-self-center self-center text-1xl space-y-3">
           <h1 className="tile-marker font-bold text-center">Casa Roberta</h1>
           <p>One-Bedroom Apartment</p>
           <p>$619 for 2</p>

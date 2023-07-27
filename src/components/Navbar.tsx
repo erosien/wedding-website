@@ -42,11 +42,11 @@ function Navbar(props: NavProps) {
       routeLocation: "/registry",
       isLoggedIn: true,
     },
-    {
-      routeTitle: "RSVP",
-      routeLocation: "/rsvp",
-      isLoggedIn: true,
-    },
+    // {
+    //   routeTitle: "RSVP",
+    //   routeLocation: "/rsvp",
+    //   isLoggedIn: true,
+    // },
     {
       routeTitle: "Sign Up",
       routeLocation: "/signup",
