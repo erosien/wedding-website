@@ -1,5 +1,3 @@
-const token = '244a679d5038e9c5d19c90d6a7af7936f368a2b144723a05'
-
 export const server_calls = {
     get: async () => {
         const response = await fetch(`https://wedding-website-uvyr.onrender.com/api/songs`,
